@@ -13,10 +13,8 @@ const NewPost = (props) => {
             author: form['author'].value,
             content: form['content'].value
         };
-        console.log(data);
         axios.post('http://localhost:8080/api/v1/posts', data)
             .then(data => {
-                console.log('Success', data);
                 props.setFlagState(props.flag + 1);
             })
             .catch(error => {
